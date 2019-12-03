@@ -17,6 +17,16 @@ public class Professor {
 	public void setMateria(String materia) {
 		this.materia = materia;
 	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Professor [nome=");
+		builder.append(nome);
+		builder.append(", materia=");
+		builder.append(materia);
+		builder.append("]");
+		return builder.toString();
+	}
 	
 	
 	

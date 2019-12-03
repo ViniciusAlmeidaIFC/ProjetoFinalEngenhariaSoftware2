@@ -20,6 +20,16 @@ public class Presenca {
 	public void setPresenca(String presenca) {
 		this.presenca = presenca;
 	}
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Presenca [data=");
+		builder.append(data);
+		builder.append(", presenca=");
+		builder.append(presenca);
+		builder.append("]");
+		return builder.toString();
+	}
 	
 	
 }

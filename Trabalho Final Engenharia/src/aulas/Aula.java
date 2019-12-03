@@ -69,6 +69,27 @@ public class Aula {
 	public void setSala(int sala) {
 		this.sala = sala;
 	}
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("Aula [conteudo=");
+		builder.append(conteudo);
+		builder.append(", lista=");
+		builder.append(lista);
+		builder.append(", dataInicio=");
+		builder.append(dataInicio);
+		builder.append(", dataFim=");
+		builder.append(dataFim);
+		builder.append(", professor=");
+		builder.append(professor);
+		builder.append(", turno=");
+		builder.append(turno);
+		builder.append(", sala=");
+		builder.append(sala);
+		builder.append("]");
+		return builder.toString();
+	}
 	
 	
 	
