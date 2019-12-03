@@ -1,5 +1,6 @@
 package aulas;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -9,11 +10,12 @@ import persistencia.Persistencia;
 
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws IOException {
 		JSON json = new JSON();
 		Persistencia pers = new Persistencia(json);
 		Date data = new Date();
 		data.getTime();
+		List<Aula> aulas = new ArrayList<Aula>();
 		
 		Aula aula = new Aula();
 		Alunos aluno = new Alunos();
@@ -52,7 +54,13 @@ public class Main {
 		data.getTime();
 		aula.setDataFim(data);
 		
+		aulas.add(aula);
+		
 		System.out.println(aula);
+		
+		json.gravar(aulas);
+		
+		
 		
 	}
 

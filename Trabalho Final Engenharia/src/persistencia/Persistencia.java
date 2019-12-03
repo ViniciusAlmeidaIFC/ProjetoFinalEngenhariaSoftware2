@@ -3,6 +3,9 @@ package persistencia;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.List;
+
+import aulas.Aula;
 
 public class Persistencia {
 
@@ -12,11 +15,11 @@ private Gravacao g;
 		this.g = g;
 	}
 	
-	public boolean gravar(double[] list) throws IOException {
+	public boolean gravar(List<Aula> list) throws IOException {
 		return g.gravar(list);
 		
 	}
-	public double[] ler() throws ParseException, FileNotFoundException{
+	public List<Aula> ler() throws ParseException, FileNotFoundException{
 		return g.ler();
 	}
 }
