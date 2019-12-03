@@ -7,29 +7,32 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
 import java.text.ParseException;
+import java.util.List;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
 
+import aulas.Aula;
+
 public class JSON implements Gravacao {
 
-	public double[] ler() throws ParseException, FileNotFoundException{
+	public List<Aula> ler() throws ParseException, FileNotFoundException{
 		GsonBuilder builder = new GsonBuilder();
 		Gson gson = builder.create();
-		BufferedReader bufferedReader = new BufferedReader(new FileReader(nomeJson));
+		BufferedReader bufferedReader = new BufferedReader(new FileReader("nomeJson.json"));
 
-		    Type listType = new TypeToken<double[]>(){}.getType();
+		    Type listType = new TypeToken<List<Aula>>(){}.getType();
 
-		    double[] lista;
+		    List<Aula> lista;
 		   
 		    return lista = new Gson().fromJson(bufferedReader, listType);
 	}
 	
-	public boolean gravar(double[] lista) throws IOException{
+	public boolean gravar(List<Aula> lista) throws IOException{
 		GsonBuilder builder = new GsonBuilder();
 	    Gson gson = builder.create();
-	    FileWriter writer = new FileWriter(nomeJson);
+	    FileWriter writer = new FileWriter("nomeJson.json");
 	    writer.write(gson.toJson(lista));
 	    writer.close();
 	    return true;
