@@ -8,6 +8,10 @@ import java.io.IOException;
 import java.lang.reflect.Type;
 import java.text.ParseException;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+
 public class JSON implements Gravacao {
 
 	public double[] ler() throws ParseException, FileNotFoundException{
